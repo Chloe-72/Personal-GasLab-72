@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+receive(),empty_call,21000,remix^0.8.20+javascriptvm,value=1 ether,base tx cost
+receive(),with_logic,2773,remix^0.8.20+javascriptvm,value=1 ether,delegate to deposit()
+transfer(),direct_deposit,27646,remix^0.8.20+javascriptvm,value=1 ether,call deposit() directly
