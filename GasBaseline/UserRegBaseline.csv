@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+register(),cold,46633,remix^0.8.20+javascriptvm,name="alice",2×cold sstore (name+balance)
+register(),warm,43534,remix^0.8.20+javascriptvm,name="alice",warm slot + array push
+register(),short_name,46330,remix^0.8.20+javascriptvm,name="a",shorter string saves ~300 gas
