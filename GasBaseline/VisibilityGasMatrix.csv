@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+external(),cold,24473,remix^0.8.20+javascriptvm,first call,cold jump
+public(),warm,21876,remix^0.8.20+javascriptvm,repeat call,warm jump
+internal(),inline,21543,remix^0.8.20+javascriptvm,internal call,no jump
