@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+storeString(),calldata,23663,remix^0.8.20+javascriptvm,str="alice",calldata offset only
+storeString(),memory,25107,remix^0.8.20+javascriptvm,str="alice",memory copy + keccak
+storeString(),storage,46633,remix^0.8.20+javascriptvm,str="alice",cold sstore 20 k
