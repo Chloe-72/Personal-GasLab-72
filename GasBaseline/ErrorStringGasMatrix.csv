@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+revert(),string32B,21800,remix^0.8.20+javascriptvm,str="32B error message",32 byte revert string
+revert(),string64B,22100,remix^0.8.20+javascriptvm,str="64B error message longer",64 byte revert string
+revert(),string128B,22700,remix^0.8.20+javascriptvm,str="128B error message much longer text",128 byte revert string
