@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+increment(),++i,21500,remix^0.8.20+javascriptvm,loop=1,unchecked prefix
+increment(),i++,21600,remix^0.8.20+javascriptvm,loop=1,post-increment
+increment(),unchecked{++i},21400,remix^0.8.20+javascriptvm,loop=1,unchecked block
