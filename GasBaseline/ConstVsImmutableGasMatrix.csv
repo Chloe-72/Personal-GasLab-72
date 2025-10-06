@@ -1,0 +1,4 @@
+operation,scenario,gasused,environment,parameters,note
+storeNumber(),immutable,21500,remix^0.8.20+javascriptvm,num=42,compile-time immutable
+storeNumber(),constant,21500,remix^0.8.20+javascriptvm,num=42,compile-time constant
+storeNumber(),storage,46600,remix^0.8.20+javascriptvm,num=42,cold SSTORE 20 k
