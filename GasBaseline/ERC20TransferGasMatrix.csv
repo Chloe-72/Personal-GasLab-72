@@ -1,0 +1,4 @@
+operation,scenario,gasUsed,environment,parameters,note
+transfer,cold-to,51512,remix^0.8.20+javascriptVM,to=new addr,1 cold account write
+transfer,warm-to,46112,remix^0.8.20+javascriptVM,to=warm addr,0 cold account write
+transfer,zero-to,28112,remix^0.8.20+javascriptVM,to=0x0,empty recipient refund 15 k
