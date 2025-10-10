@@ -15,7 +15,7 @@ View: https://github.com/Chloe-72/Personal-GasLab-72/commit/5602662
 | Day | Insight | Gas Saved | Chain Proof |
 |---|---------|-----------|-------------|
 | 001 | AddressSkeleton baseline | 2.1k | https://github.com/Chloe-72/Personal-GasLab-72/commit/5602662 |
-| ... | ... | ... | ... |
+| 002 | D2 SBT Stage-0 draft + SHA-256 commit | 0 | https://x.com/chloecao0702/status/1976316792554631352 |
 
 ## Anti-Fragile Contract
 ```solidity
