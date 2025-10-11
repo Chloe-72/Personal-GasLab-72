@@ -2,3 +2,4 @@ operation,scenario,gasUsed,environment,parameters,note
 approve,cold-spender,46233,remix^0.8.20+javascriptVM,spender=new,1 cold slot
 approve,warm-spender,29033,remix^0.8.20+javascriptVM,spender=warm,0 cold slot
 approve,overwrite,20733,remix^0.8.20+javascriptVM,slot warm & dirty,2.5 k refund
+
