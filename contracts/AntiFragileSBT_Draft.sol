@@ -18,7 +18,7 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
     uint256 public constant MAX_TOTAL_TAX = 0.1 ether;
     uint256 public constant LEARNING_DAYS = 148;
     uint256 public constant SILENCE_THRESHOLD = 3 days;
-    uint16 public constant MAX_LEAVE_DAYS = 200;
+    uint16 public constant MAX_LEAVE_DAYS = 1000;
 
     Counters.Counter private _tokenIdCounter;
 
@@ -52,7 +52,6 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
         if (userTokenId[msg.sender] != 0) revert AlreadyActive();
         if (usedHash[commitHash]) revert HashUsed();
 
-        usedHash[commitHash] = true;
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _mint(msg.sender, tokenId);
@@ -68,6 +67,7 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
             totalLeaveDays: 0,
             leaveEndTime: 0
         });
+        usedHash[commitHash] = true;
 
         emit JourneyStarted(msg.sender, tokenId, msg.value);
         emit CommitRecorded(msg.sender, commitHash, 1);
@@ -156,8 +156,9 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
         uint256 refund = st.depositBalance;
         if (refund == 0) revert NothingToRefund();
 
-        _cleanupUserState(learner);
+        require(ownerOf(tokenId) == learner, "Not owner");
         _burn(tokenId);
+        _cleanupUserState(learner);
 
         (bool success, ) = payable(learner).call{value: refund}("");
         if (!success) revert TransferFail();
@@ -167,9 +168,10 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
 
     function topUpDeposit() external payable {
         if (userTokenId[msg.sender] == 0) revert NotActive();
-        unchecked {
-            userStates[msg.sender].depositBalance += uint128(msg.value);
-        }
+        UserState storage st = userStates[msg.sender];
+        uint256 newBal = uint256(st.depositBalance) + msg.value;
+        require(newBal <= type(uint128).max, "Overflow");
+        st.depositBalance = uint128(newBal);
     }
 
     function withdrawFees() external onlyOwner nonReentrant {
@@ -298,7 +300,7 @@ contract AntiFragileSBT200 is ERC721Enumerable, Ownable, ReentrancyGuard {
         delete userStates[learner];
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256, uint256) internal pure override {
+    function _beforeTokenTransfer(address from, address to, uint256, uint256) internal view override {
         if (from != address(0) && to != address(0)) revert NonTransferable();
     }
 
