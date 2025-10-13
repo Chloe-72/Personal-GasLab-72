@@ -1,4 +1,0 @@
-operation,scenario,gasUsed,environment,parameters,note
-mint,cold-account,47176,remix^0.8.20+javascriptVM,to=new,2 cold slots
-mint,warm-account,28976,remix^0.8.20+javascriptVM,to=warm,1 cold slot
-mint,zero-account,46176,remix^0.8.20+javascriptVM,to=0x0,totalSupply cold write
