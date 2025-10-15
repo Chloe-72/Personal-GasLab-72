@@ -1,4 +1,0 @@
-operation,scenario,gasused,environment,parameters,note
-deposit(),first_time,27646,remix^0.8.20+javascriptvm,value=1 ether,cold sload + warm sstore
-deposit(),subsequent,25543,remix^0.8.20+javascriptvm,value=1 ether,all warm accesses
-deposit(),min_value,25521,remix^0.8.20+javascriptvm,value=1 wei,amount has negligible effect
