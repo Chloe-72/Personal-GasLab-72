@@ -1,3 +1,0 @@
-操作,实测gas,备注
-push(去重),43000,冷写+mapping读
-pop(去重),27000,deleteLast+mapping写
