@@ -1,0 +1,10 @@
+# Deployment Log | Anti-Fragile DeFi
+
+| Tag | Commit | Network | Tx Hash | Runtime Hash | Auditor | Status | Note |
+|-----|--------|---------|---------|--------------|---------|--------|------|
+| v0.0.0-alpha | df92f26 | Sepolia | 0x627801 | 0xCC608d3 | @KuwaTakushi (community) | deprecated | viaIR opt, author key **not** used |
+| v0.0.0-final | df92f26 | Sepolia | TBD | TBD | Author | planned | author key, bytecode identical to commit |
+
+**Status legend**  
+- `planned` = deployment slot reserved, hash to be filled after author tx  
+- `deprecated` = community alpha, not authoritative
