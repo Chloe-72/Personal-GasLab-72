@@ -1,3 +1,0 @@
-Operation,GasUsed,Note
-popA() (emit first),4357,cold SLOAD + emit + pop
-popB() (cache first),4257,cold SLOAD 1× + emit + pop
