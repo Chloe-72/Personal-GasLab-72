@@ -1,4 +1,0 @@
-Operation,Gas Used,Note
-第一次读 SLOAD 冷,2100,冷读
-第二次读 SLOAD 热,100,热读
-第一次写 SSTORE 冷,20000,冷写
